@@ -1,0 +1,34 @@
+.funky-board {
+    
+    --ccw: #caaf7d;
+    --ccb: #7b5330;
+    --cs: none;
+
+    .pieces {
+        background-image: url('wood4.jpg');
+        background-size: cover;
+
+        box-shadow: 2px 2px 4px #7b5330;
+
+        border-radius: 3px;
+    }
+
+    .files, .ranks {
+        text-shadow: var(--cs, 0 1px 1px #000);
+        font-weight: bold;
+    }
+
+    &.orientation-white .files .file:nth-child(2n+1),
+    &.orientation-white .ranks .rank:nth-child(2n),
+    &.orientation-black .files .file:nth-child(2n),
+    &.orientation-black .ranks .rank:nth-child(2n+1) {
+        color: var(--ccw, #fff)
+    }
+
+    &.orientation-white .files .file:nth-child(2n),
+    &.orientation-white .ranks .rank:nth-child(2n+1),
+    &.orientation-black .files .file:nth-child(2n+1),
+    &.orientation-black .ranks .rank:nth-child(2n) {
+        color: var(--ccb, #fff)
+    }
+}

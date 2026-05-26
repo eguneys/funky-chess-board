@@ -1,0 +1,70 @@
+.funky-board {
+
+    position: relative;
+    display: flex;
+
+    aspect-ratio: 1;
+
+    .files {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .ranks {
+        position: absolute;
+        right: 2px;
+        height: 100%;
+    }
+
+    .files, .ranks {
+        text-transform: lowercase;
+    }
+
+    .ranks {
+        display: flex;
+        flex-flow: column-reverse;
+        justify-content: space-around;
+        flex: 1;
+        margin-left: 1px;
+
+        .rank {
+            flex: 1;
+            margin-top: 8px;
+        }
+    }
+
+    .files {
+        display: flex;
+        justify-content: space-around;
+        flex: 1;
+
+        .file {
+            flex: 1;
+
+            margin-left: 8px;
+        }
+    }
+
+    &.orientation-black {
+        .files {
+            flex-flow: row-reverse;
+        }
+
+        .ranks {
+            flex-flow: column;
+        }
+    }
+
+    .pieces, .arrows {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        aspect-ratio: 1;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+    }
+}
